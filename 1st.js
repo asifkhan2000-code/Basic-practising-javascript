@@ -1,13 +1,9 @@
 function findEvenNumber(minValue, maxValue) {
-    if (
-        typeof minValue !== "number" ||
-        typeof maxValue !== "number" ||
-        minValue < 0
-    ) {
+    if (typeof minValue !== "number" || typeof maxValue !== "number") {
         return "Invalid";
     }
     let evenNumbers = [];
-    if (minValue % 2 === 1) {
+    if (minValue % 2 === 1 || minValue % 2 === -1) {
         minValue++;
     }
     while (minValue <= maxValue) {
@@ -17,5 +13,5 @@ function findEvenNumber(minValue, maxValue) {
     }
     return evenNumbers;
 }
-const result = findEvenNumber(1, 10);
+const result = findEvenNumber(-8, 10);
 console.log(result);
